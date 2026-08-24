@@ -2,7 +2,7 @@
   function init() {
     var overlay = document.querySelector('.page-transition');
     var video = overlay ? overlay.querySelector('video') : null;
-    var links = document.querySelectorAll('.nav a[href], .hero-links a[href]');
+    var links = document.querySelectorAll('.nav a[href]');
     if (!overlay || !video || !links.length) return;
 
     var FALLBACK_DELAY = 4000;
