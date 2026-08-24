@@ -659,25 +659,42 @@ body.page--dark {
   }
 
   .hero-row {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    padding: 0;
+  }
+
+  .hero-col--left {
+    position: absolute;
+    top: 30%;
+    left: 6%;
+    text-align: left;
+  }
+
+  .hero-col--right {
+    position: absolute;
+    top: 30%;
+    right: 6%;
+    text-align: right;
     flex-direction: column;
-    gap: 20px;
-    padding: 0 8%;
-    text-align: center;
-  }
-
-  .hero-col--left,
-  .hero-col--right {
-    text-align: center;
-  }
-
-  .hero-col--right {
-    flex-direction: row;
-    gap: 20px;
-    justify-content: center;
+    gap: 0;
   }
 
   .hero-col--center {
-    max-width: 90%;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    max-width: none;
+    margin: 0;
+    text-align: center;
+    font-size: 13px;
   }
 
   .page-header,
@@ -693,6 +710,10 @@ body.page--dark {
   .project-row .frames,
   .project-row .frames.frames--four {
     grid-template-columns: 1fr;
+  }
+
+  .project-row .frames .frame:not(:first-child) {
+    display: none;
   }
 
   .gallery-grid,
