@@ -178,13 +178,6 @@ ul {
   transform: translate(-50%, -50%);
 }
 
-/* phones in either orientation: fill the screen instead of letterboxing */
-@media (max-width: 600px), (max-height: 600px) {
-  .hero video {
-    object-fit: cover;
-  }
-}
-
 .hero::after {
   content: "";
   position: absolute;
@@ -614,6 +607,19 @@ body.page--dark {
   .gallery-grid,
   .gallery-grid.gallery-grid--three {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* phones in landscape: keep each project to a single row, shrinking images instead of wrapping */
+@media (max-height: 600px) and (orientation: landscape) {
+  .project-row .frames {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .project-row .frames.frames--four {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
   }
 }
 
